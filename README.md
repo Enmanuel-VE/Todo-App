@@ -6,9 +6,9 @@ Esta aplicación tiene como objetivo practicar y repasar conocimientos. En esta 
 
 ## 📷 Capturas de pantallas
 
-<div style="display:flex; flex-direction:row; gap:2rem">
-<img src="./src/docs/assets/images/phone-1.png" style="max-width: 50%; max-height: 350px;" />
-<img src="./src/docs/assets/images/phone-2.png" style="max-width: 50%; max-height: 350px;" />
+<div style="display:flex; flex-direction:row;">
+    <img src="./src/docs/assets/images/phone-1.png" width="250"/>
+    <img src="./src/docs/assets/images/phone-2.png" width="250"/>
 </div>
 
 
@@ -55,5 +55,6 @@ Puedes crear **Todos** con fecha, hora, categoría, descripción, título y marc
 * **Correo Electrónico:** [enmanuelbracho.dev@gmail.com](mailto:enmanuelbracho.dev@gmail.com)
 
 ---
+
 
 <footer align="center"> Hecho con 💜 </footer>
