@@ -8,12 +8,10 @@ function SignIn() {
 	const methods = useForm<Credentials>();
 
 	const onSubmit = useCallback(async (dataForm: Credentials) => {
-		const { data, error } = await supabaseClient.auth.signInWithPassword({
+		await supabaseClient.auth.signInWithPassword({
 			email: dataForm.email,
 			password: dataForm.password,
 		});
-
-		console.log(dataForm, data, error);
 	}, []);
 
 	return (

@@ -3,7 +3,7 @@ import InputForm from "../atoms/InputForm";
 import PasswordInputGroup from "../Molecules/PasswordInputGroup";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router";
-import { useFormContext, type FieldValues } from "react-hook-form";
+import { useFormContext, type FieldValues, type Path } from "react-hook-form";
 
 interface AuthFormProps<T extends FieldValues> {
 	type: "signin" | "signup";
@@ -20,9 +20,9 @@ function AuthForm<T extends FieldValues>({ type, onSubmit }: AuthFormProps<T>) {
 			onSubmit={handleSubmit(onSubmit)}
 			className="flex flex-col gap-4 p-4"
 		>
-			<InputForm
+			<InputForm<T>
 				type="email"
-				name={"email"}
+				name={"email" as Path<T>}
 				options={{
 					required: true,
 					pattern: {
@@ -34,7 +34,11 @@ function AuthForm<T extends FieldValues>({ type, onSubmit }: AuthFormProps<T>) {
 				placeholder="tuCorreo@sitio.com"
 			/>
 
-			<PasswordInputGroup isRepeat={IS_SIGN_UP} />
+			<PasswordInputGroup<T>
+				isRepeat={IS_SIGN_UP}
+				passwordName={"password" as Path<T>}
+				passwordConfirmationName={"passwordConfirmation" as Path<T>}
+			/>
 
 			<ButtonForm type="submit" className="w-full">
 				{IS_SIGN_UP ? "Registrarse" : "Iniciar sesión"}

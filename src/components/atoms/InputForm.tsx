@@ -2,6 +2,7 @@ import {
 	useFormContext,
 	type FieldValues,
 	type RegisterOptions,
+	type Path,
 } from "react-hook-form";
 import type { IconType } from "react-icons";
 
